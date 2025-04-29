@@ -6,10 +6,11 @@ public class Movement : MonoBehaviour
     [SerializeField]float speed;
     Vector2 movement;
     Rigidbody2D rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+   
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameController.instance.OnBattleCall.AddListener(BattleMode);
     }
 
     // Update is called once per frame
@@ -19,6 +20,14 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (GameController.instance.GameStates.Equals(GameStates.BATTLE))
+           return;
+        
+            
         rb.linearVelocity = movement * speed;
+    }
+    void BattleMode()
+    {
+        rb.linearVelocity = Vector2.zero;
     }
 }
