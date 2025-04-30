@@ -1,9 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class BattleController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static BattleController instance;
+    public UnityEvent OnCharactersEnterEnd;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Battle"));
@@ -13,5 +20,10 @@ public class BattleController : MonoBehaviour
     void Update()
     {
         
+    }
+    public void RunAway()
+    {
+        GameController.instance.OnBattleEnd.Invoke();
+        SceneManager.UnloadSceneAsync("Battle");
     }
 }
