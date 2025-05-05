@@ -308,6 +308,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e09d0b9d89179348b537d2123cceb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2094773414}
+  OnBattleCall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBattleEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1945917930
 Transform:
   m_ObjectHideFlags: 0
@@ -336,6 +343,7 @@ GameObject:
   - component: {fileID: 2094773410}
   - component: {fileID: 2094773409}
   - component: {fileID: 2094773413}
+  - component: {fileID: 2094773414}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -498,7 +506,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4866101156fd3c4da3024a9450ead4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 4.31
+--- !u!114 &2094773414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094773408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79137315d8907ee449338b0f51d6cf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attibutes:
+  - name: Alex de Niteroi
+    life: 15
+    phsicalAttack: 5
+    specialAttack: 10
+    phsicalDefense: 6
+    specialDefense: 6
+    speed: 12
+    level: 5
 --- !u!1 &2099547533
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +540,7 @@ GameObject:
   - component: {fileID: 2099547534}
   - component: {fileID: 2099547536}
   - component: {fileID: 2099547537}
+  - component: {fileID: 2099547538}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -628,6 +658,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28afa35fd4694f54083d65d7bcc26db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2099547538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099547533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55a67f75056db3478f548e8f1ec45da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attibutes:
+  - name: Fernando Gil
+    life: 5
+    phsicalAttack: 2
+    specialAttack: 6
+    phsicalDefense: 2
+    specialDefense: 4
+    speed: 2
+    level: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

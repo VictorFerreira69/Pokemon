@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public  abstract class Monster : MonoBehaviour
 {
-  
-    void Start()
+  EnemyStatus enemyStatus;
+    void Awake()
     {
-        
+       enemyStatus = GetComponent<EnemyStatus>();
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public  abstract class Monster : MonoBehaviour
     void CallBatle()
     {
         SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
-
+        GameController.instance.Enemy = enemyStatus.GetTroops();
         GameController.instance.OnBattleCall.Invoke();
     }
 }

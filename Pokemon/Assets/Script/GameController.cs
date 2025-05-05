@@ -8,14 +8,18 @@ public enum GameStates
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-  [SerializeField]  GameStates _gameStates = GameStates.GAME;
+  GameStates _gameStates = GameStates.GAME;
+
+    [SerializeField] AllyStatus1 player;
+    Attibutes[] enemy;
+ 
+
 
     public UnityEvent OnBattleCall;
     public UnityEvent OnBattleEnd;
     public GameStates GameStates { get => _gameStates; set => _gameStates = value; }
-
-
-
+    public Attibutes[] Enemy { get => enemy; set => enemy = value; }
+    public AllyStatus1 Player { get => player; }
 
     private void Awake()
     {
