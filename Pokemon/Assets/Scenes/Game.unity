@@ -565,6 +565,10 @@ MonoBehaviour:
     specialDefense: 6
     speed: 12
     level: 5
+    startMoves:
+    - Nigth Shade
+    - Tackle
+  starterMoves: []
 --- !u!1 &2099547533
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +720,9 @@ MonoBehaviour:
     specialDefense: 4
     speed: 2
     level: 3
+    startMoves:
+    - Water Gun
+  starterMoves: []
 --- !u!1001 &3022039285390903841
 PrefabInstance:
   m_ObjectHideFlags: 0

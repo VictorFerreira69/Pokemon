@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.Properties;
 
 [System.Serializable]
 public class Attibutes
@@ -13,9 +14,11 @@ public class Attibutes
     [SerializeField] int specialDefense;
 
     [SerializeField] int speed;
-    [SerializeField] int level
+    [SerializeField] int level;
 
+    [SerializeField] string[] startMoves;
 
+    public string[] StartMoves { get => startMoves; }
 
     public bool TakeDamage(int damage)
     {
@@ -40,13 +43,19 @@ public abstract class Status : MonoBehaviour
         return attibutes.ToArray();
     }
 
-    void Start()
+    protected void Start()
     {
         moves = transform.GetChild(0);
-        foreach (var move in starterMoves)
+        foreach (Attibutes move in attibutes)
         {
-            Instantiate(GameController.instance.GetAttack(move), moves);
+           foreach(string item in move.StartMoves)
+                //Instancia cada golpe inicial de cada pokemon que existe na lista
+            {
+                Instantiate(GameController.instance.GetAttack(item), moves);
+            }
         }
+       
+        
 
 
 
