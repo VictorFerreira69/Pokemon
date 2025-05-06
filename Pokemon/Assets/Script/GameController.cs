@@ -21,6 +21,21 @@ public class GameController : MonoBehaviour
     public Attibutes[] Enemy { get => enemy; set => enemy = value; }
     public AllyStatus1 Player { get => player; }
 
+    [Header("References")]
+    [SerializeField] GameObject[] attacks;
+
+    public GameObject GetAttack(string name)
+    {
+        foreach(var att in attacks)
+        {
+            if (att.name.Equals(name))
+            {
+                return att;
+            }
+        }
+
+        return null;
+    }
     private void Awake()
     {
         instance = this;

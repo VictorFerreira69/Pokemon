@@ -13,7 +13,9 @@ public class Attibutes
     [SerializeField] int specialDefense;
 
     [SerializeField] int speed;
-    [SerializeField] int level;
+    [SerializeField] int level
+
+
 
     public bool TakeDamage(int damage)
     {
@@ -30,6 +32,9 @@ public abstract class Status : MonoBehaviour
    
     [SerializeField] List<Attibutes> attibutes = new List<Attibutes>();
 
+    [SerializeField] string[] starterMoves;
+    Transform moves;
+
     public Attibutes[] GetTroops()
     {
         return attibutes.ToArray();
@@ -37,7 +42,14 @@ public abstract class Status : MonoBehaviour
 
     void Start()
     {
-        
+        moves = transform.GetChild(0);
+        foreach (var move in starterMoves)
+        {
+            Instantiate(GameController.instance.GetAttack(move), moves);
+        }
+
+
+
     }
 
     // Update is called once per frame

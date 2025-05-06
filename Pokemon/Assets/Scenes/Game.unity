@@ -211,6 +211,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &907086334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907086335}
+  m_Layer: 0
+  m_Name: Moves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907086335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907086334}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2094773412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260866293
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +346,11 @@ MonoBehaviour:
   OnBattleEnd:
     m_PersistentCalls:
       m_Calls: []
+  attacks:
+  - {fileID: 5005779135035033014, guid: aeb736c7c51c9ed40aeded9fb044c034, type: 3}
+  - {fileID: 6925985608279833224, guid: fdf880a029012704da9660773824bc7c, type: 3}
+  - {fileID: 7653465777881486917, guid: 4813ead5d8ef6ae41a64cf6907496e11, type: 3}
+  - {fileID: 494903976963590720, guid: eba9a6455f7346446af067b6e92a6c34, type: 3}
 --- !u!4 &1945917930
 Transform:
   m_ObjectHideFlags: 0
@@ -491,7 +527,8 @@ Transform:
   m_LocalPosition: {x: -5.2323036, y: -1.615432, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 907086335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2094773413
