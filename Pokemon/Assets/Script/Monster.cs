@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.AI;
 public  abstract class Monster : MonoBehaviour
 {
   EnemyStatus enemyStatus;
+    NavMeshAgent agent;
     void Awake()
     {
        enemyStatus = GetComponent<EnemyStatus>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
@@ -16,7 +20,9 @@ public  abstract class Monster : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        CallBatle();
+       // CallBatle();
+       collision.GetComponent<Movement>().FaceMonster();
+       agent.SetDestination(collision.transform.position); 
     }
     void CallBatle()
     {
